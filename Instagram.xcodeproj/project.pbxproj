@@ -20,6 +20,8 @@
 		8D2CE88124B3D778000400EE /* InstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D2CE88024B3D778000400EE /* InstagramUITests.m */; };
 		8D2CE89024B3E5D9000400EE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D2CE88F24B3E5D9000400EE /* LoginViewController.m */; };
 		8D2CE89724B4EF1E000400EE /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D2CE89624B4EF1E000400EE /* TimelineViewController.m */; };
+		8DAE235224B66AA400302EF2 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAE235124B66AA400302EF2 /* ComposeViewController.m */; };
+		8DAE235524B76E3B00302EF2 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAE235424B76E3B00302EF2 /* Post.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,10 @@
 		8D2CE88F24B3E5D9000400EE /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		8D2CE89524B4EF1E000400EE /* TimelineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
 		8D2CE89624B4EF1E000400EE /* TimelineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
+		8DAE235024B66AA400302EF2 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		8DAE235124B66AA400302EF2 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		8DAE235324B76E3B00302EF2 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		8DAE235424B76E3B00302EF2 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		A6AFEB3ACA9626FCD6F9ADA2 /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
 		BEE25DE4694EA19D2457ED84 /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		E629C75BAB804FA94319BB3E /* Pods-InstagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.release.xcconfig"; path = "Target Support Files/Pods-InstagramTests/Pods-InstagramTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +130,7 @@
 		8D2CE85824B3D778000400EE /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				8DAE234C24B663E000302EF2 /* Models */,
 				8D2CE89124B3E7C6000400EE /* View Contollers */,
 				8D2CE85924B3D778000400EE /* AppDelegate.h */,
 				8D2CE85A24B3D778000400EE /* AppDelegate.m */,
@@ -163,8 +170,19 @@
 				8D2CE88F24B3E5D9000400EE /* LoginViewController.m */,
 				8D2CE89524B4EF1E000400EE /* TimelineViewController.h */,
 				8D2CE89624B4EF1E000400EE /* TimelineViewController.m */,
+				8DAE235024B66AA400302EF2 /* ComposeViewController.h */,
+				8DAE235124B66AA400302EF2 /* ComposeViewController.m */,
 			);
 			path = "View Contollers";
+			sourceTree = "<group>";
+		};
+		8DAE234C24B663E000302EF2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8DAE235324B76E3B00302EF2 /* Post.h */,
+				8DAE235424B76E3B00302EF2 /* Post.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E7454DAB10652CDCE2C91852 /* Frameworks */ = {
@@ -432,7 +450,9 @@
 				8D2CE86C24B3D778000400EE /* main.m in Sources */,
 				8D2CE85E24B3D778000400EE /* SceneDelegate.m in Sources */,
 				8D2CE89024B3E5D9000400EE /* LoginViewController.m in Sources */,
+				8DAE235224B66AA400302EF2 /* ComposeViewController.m in Sources */,
 				8D2CE89724B4EF1E000400EE /* TimelineViewController.m in Sources */,
+				8DAE235524B76E3B00302EF2 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
