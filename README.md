@@ -48,7 +48,8 @@ Here's a walkthrough of implemented user stories:
 
 <img src='http://g.recordit.co/qkqTZyU0jC.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 <img src='http://g.recordit.co/1zPxcGIOrj.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
+<img src='http://g.recordit.co/G2avQqOu9X.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/BVJ6vmtBsz.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with Recordit
 
@@ -61,7 +62,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Describe any challenges encountered while building the app: I hit blockers realted to posting an image and caption into the timeline view controller, but I was able to figure it out it was a miner fix. There was a restriction which said that no paost with less then 100 like can be posted, once I removed it, it worked. 
 
 ## License
 
