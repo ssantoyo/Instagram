@@ -95,14 +95,14 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
-    
-        //DetailsViewController *detailsViewController = [segue destinationViewController];
+    if ([[segue identifier] isEqualToString:@"DetailsSegue"]){
            PostCell *tappedCell = sender;
            NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-           //Post *post = self.posts[indexPath.row];
-           //detailsViewController.post = post;
-    
-    
+           Post *post = self.posts[indexPath.row];
+            DetailsViewController *detailsViewController = [segue destinationViewController];
+           detailsViewController.post = post;
+    }
+       
 }
 
 
@@ -111,12 +111,9 @@
      
      Post *post = self.posts[indexPath.row];
      cell.post = post;
+    
     cell.postImageView.file = post.image;
     [cell.postImageView loadInBackground];
-    
-    
-    //cell.captionLabel.text = [NSString stringWithFormat:@"row: %d, section %d", indexPath.row, indexPath.section];
-    //missing the picture of the post
     
     cell.captionLabel.text = post.caption;
     

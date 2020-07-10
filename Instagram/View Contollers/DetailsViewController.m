@@ -7,8 +7,23 @@
 //
 
 #import "DetailsViewController.h"
+#import "TimelineViewController.h"
+#import "LoginViewController.h"
+#import "SceneDelegate.h"
+#import <Parse/Parse.h>
+#import "PostCell.h"
+#import "Post.h"
+#import "AppDelegate.h"
+#import "DateTools.h"
+#import "NSDate+TimeAgo.h"
+#import "PFImageView.h"
+
+
 
 @interface DetailsViewController ()
+@property (weak, nonatomic) IBOutlet PFImageView  *postImageView;
+@property (weak, nonatomic) IBOutlet UITextView *captionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
 
 @end
 
@@ -16,8 +31,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.postImageView.file = self.post.image;
+    [self.postImageView loadInBackground];
+    
+    self.captionLabel.text = self.post.caption;
+    
+    NSDate *createdAt = [self.post createdAt];     NSString *ago = [createdAt timeAgo];     NSString *createdAtString = ago;     self.timestampLabel.text = createdAtString;
+
+ 
 }
+
 
 /*
 #pragma mark - Navigation
