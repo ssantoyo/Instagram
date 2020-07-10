@@ -73,7 +73,7 @@
 }
 
 - (IBAction)onTapShare:(id)sender {
-    if(self.pictureView.image != nil && self.textView.hasText != nil){//checks to see if there is an image and a caption, if true then post, if not then send error
+    if(self.pictureView.image != nil && self.textView.hasText){//checks to see if there is an image and a caption, if true then post, if not then send error
         
         UIImage *resized = [self resizeImage:self.pictureView.image withSize:CGSizeMake(150, 150)];//resizes the image taken from eiher camera or Library
         

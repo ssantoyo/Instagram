@@ -10,8 +10,20 @@
 #import "LoginViewController.h"
 #import "SceneDelegate.h"
 #import <Parse/Parse.h>
+#import "PostCell.h"
+#import "Post.h"
+#import "AppDelegate.h"
+#import "DateTools.h"
+#import "NSDate+TimeAgo.h"
+#import "DetailsViewController.h"
 
-@interface TimelineViewController ()
+
+@interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) NSMutableArray *posts;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 
 @end
 
@@ -19,8 +31,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.rowHeight = 300;
+    
+    [self getTimeline];
+    //will refresh the table view
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(getTimeline) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
+    
 }
+    
+
+
+-(void)getTimeline{
+    // construct query
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    //reorders post from recently added post to the top
+    [query orderByDescending: @"createdAt"];
+    query.limit = 20;
+    NSLog(@"Post is being refreshed");
+
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            self.posts = (NSMutableArray *)posts;
+            //refreshes tableView data
+            [self.tableView reloadData];
+            // do something with the array of object returned by the call
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+        [self.refreshControl endRefreshing];
+    }];
+}
+
 
 
 - (IBAction)onTapLogout:(id)sender {
@@ -42,14 +89,43 @@
 
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+        //DetailsViewController *detailsViewController = [segue destinationViewController];
+           PostCell *tappedCell = sender;
+           NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+           //Post *post = self.posts[indexPath.row];
+           //detailsViewController.post = post;
+    
+    
 }
-*/
+
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
+     
+     Post *post = self.posts[indexPath.row];
+     cell.post = post;
+    cell.postImageView.file = post.image;
+    [cell.postImageView loadInBackground];
+    
+    
+    //cell.captionLabel.text = [NSString stringWithFormat:@"row: %d, section %d", indexPath.row, indexPath.section];
+    //missing the picture of the post
+    
+    cell.captionLabel.text = post.caption;
+    
+     return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.posts.count;
+}
+
 
 @end

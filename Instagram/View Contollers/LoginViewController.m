@@ -45,7 +45,7 @@
        
        else{
            
-       NSString *username = self.usernameField.text;
+       NSString *username = self.usernameField.text;//clean up and improve
        NSString *password = self.passwordField.text;
        
        [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
@@ -64,7 +64,7 @@
 
 
 - (IBAction)onTapSignUp:(id)sender {
-    
+    //make concise and use a helper method to check if usernameField and PasswordField
      if ([self.usernameField.text isEqual:@""] || [self.passwordField.text isEqual:@""]) {
         
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Username and Password Fields Required"

@@ -22,6 +22,8 @@
 		8D2CE89724B4EF1E000400EE /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D2CE89624B4EF1E000400EE /* TimelineViewController.m */; };
 		8DAE235224B66AA400302EF2 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAE235124B66AA400302EF2 /* ComposeViewController.m */; };
 		8DAE235524B76E3B00302EF2 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAE235424B76E3B00302EF2 /* Post.m */; };
+		8DAE235824B7BA8B00302EF2 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAE235724B7BA8B00302EF2 /* PostCell.m */; };
+		8DAE235E24B7D58B00302EF2 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAE235D24B7D58B00302EF2 /* DetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,10 @@
 		8DAE235124B66AA400302EF2 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		8DAE235324B76E3B00302EF2 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		8DAE235424B76E3B00302EF2 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		8DAE235624B7BA8B00302EF2 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		8DAE235724B7BA8B00302EF2 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
+		8DAE235C24B7D58B00302EF2 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		8DAE235D24B7D58B00302EF2 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		A6AFEB3ACA9626FCD6F9ADA2 /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
 		BEE25DE4694EA19D2457ED84 /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		E629C75BAB804FA94319BB3E /* Pods-InstagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.release.xcconfig"; path = "Target Support Files/Pods-InstagramTests/Pods-InstagramTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +178,8 @@
 				8D2CE89624B4EF1E000400EE /* TimelineViewController.m */,
 				8DAE235024B66AA400302EF2 /* ComposeViewController.h */,
 				8DAE235124B66AA400302EF2 /* ComposeViewController.m */,
+				8DAE235C24B7D58B00302EF2 /* DetailsViewController.h */,
+				8DAE235D24B7D58B00302EF2 /* DetailsViewController.m */,
 			);
 			path = "View Contollers";
 			sourceTree = "<group>";
@@ -181,6 +189,8 @@
 			children = (
 				8DAE235324B76E3B00302EF2 /* Post.h */,
 				8DAE235424B76E3B00302EF2 /* Post.m */,
+				8DAE235624B7BA8B00302EF2 /* PostCell.h */,
+				8DAE235724B7BA8B00302EF2 /* PostCell.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -449,8 +459,10 @@
 				8D2CE85B24B3D778000400EE /* AppDelegate.m in Sources */,
 				8D2CE86C24B3D778000400EE /* main.m in Sources */,
 				8D2CE85E24B3D778000400EE /* SceneDelegate.m in Sources */,
+				8DAE235824B7BA8B00302EF2 /* PostCell.m in Sources */,
 				8D2CE89024B3E5D9000400EE /* LoginViewController.m in Sources */,
 				8DAE235224B66AA400302EF2 /* ComposeViewController.m in Sources */,
+				8DAE235E24B7D58B00302EF2 /* DetailsViewController.m in Sources */,
 				8D2CE89724B4EF1E000400EE /* TimelineViewController.m in Sources */,
 				8DAE235524B76E3B00302EF2 /* Post.m in Sources */,
 			);
